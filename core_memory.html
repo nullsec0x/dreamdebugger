@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Dream Debugger :: Core Memory</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="memory-page">
+    <div class="loader">↳ booting lucid.sys . . .</div> 
+    <div class="memory-container">
+        <p class="memory-fragment skewed">I remember... the code was compiling... or was it? The variables kept changing when I wasn't looking. <span class="blurred">Did I ever save the file?</span></p>
+        
+        <div class="typing-container">
+            <p class="memory-fragment typing" id="typing-memory"></p>
+        </div>
+        
+        <p class="memory-fragment vertical">while (asleep) {<br>
+            &nbsp;&nbsp;dream();<br>
+            &nbsp;&nbsp;if (error) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;panic();<br>
+            &nbsp;&nbsp;}<br>
+        }</p>
+        
+        <div class="button-container">
+            <button id="patch-button">Patch Memory?</button>
+            <a href="wakeup.html" id="wakeup-button">Proceed to Wake Sequence</a>
+        </div>
+    </div>
+    
+    <div class="error-list">
+        <ul>
+            <li>ERR_NIGHTMARE_NULL</li>
+            <li>STACK_OVERFLOW_REVERIE</li>
+            <li>UNDEFINED_THOUGHT_0x001</li>
+        </ul>
+    </div>
+    
+    <footer>
+        Memory Usage: 102.4% | lucid.sys active | <a href="mailto:nullsec0x@proton.me">Report anomaly</a> | <a href="https://github.com/nullsec0x/dreamdebugger" target="_blank">View source</a>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
