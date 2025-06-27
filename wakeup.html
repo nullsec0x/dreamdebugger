@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Dream Debugger :: Wake Sequence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const glyphs = ['{}', '</>', '()', '[]', '/*'];
+        let lastGlyphTime = 0;
+        const mouseTrail = document.getElementById('mouse-trail');
+        
+        if (mouseTrail) {
+            let mouseX = 0, mouseY = 0;
+            let trailX = 0, trailY = 0;
+            const speed = 0.2;
+            const glyphContainer = document.createElement('div');
+            glyphContainer.id = 'glyph-container';
+            document.body.appendChild(glyphContainer);
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                const now = Date.now();
+                if (now - lastGlyphTime > 300) {
+                    lastGlyphTime = now;
+                    const glyph = document.createElement('div');
+                    glyph.className = 'glyph';
+                    glyph.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+                    glyph.style.left = `${e.clientX}px`;
+                    glyph.style.top = `${e.clientY}px`;
+                    glyph.style.color = `hsl(${Math.random() * 60 + 180}, 100%, 70%)`;
+                    glyphContainer.appendChild(glyph);
+                    
+                    setTimeout(() => {
+                        glyph.style.opacity = '0';
+                        glyph.style.transform = 'translateY(-20px)';
+                        setTimeout(() => glyph.remove(), 1000);
+                    }, 100);
+                }
+            });
+            
+            function animateTrail() {
+                trailX += (mouseX - trailX) * speed;
+                trailY += (mouseY - trailY) * speed;
+                
+                mouseTrail.style.left = trailX + 'px';
+                mouseTrail.style.top = trailY + 'px';
+                mouseTrail.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    mouseTrail.style.opacity = '0';
+                }, 100);
+                
+                requestAnimationFrame(animateTrail);
+            }
+            
+            animateTrail();
+        }
+        
+        document.getElementById('wake-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.style.transition = 'background-color 2s ease';
+            document.body.style.backgroundColor = 'white';
+            
+            setTimeout(() => {
+                window.location.href = e.target.href;
+            }, 2000);
+        });
+    });
+    </script>
+</head>
+<body class="wakeup-page">
+    <div class="choice-container">
+        <h1 class="glitch-text">Wake Sequence Initiated</h1>
+        
+        <div class="choices">
+            <a href="404.html" class="choice-button" id="wake-button">Wake Up</a>
+            <a href="index.html" class="choice-button">Keep Dreaming</a>
+        </div>
+    </div>
+    
+    <div id="mouse-trail"></div>
+    
+    <footer>
+        Memory Usage: 102.4% | lucid.sys active | <a href="https://github.com/dreamdebugger" target="_blank">View source</a>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

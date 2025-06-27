@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Dream Debugger :: Loading</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="dream-page">
+    <audio id="bgAudio" loop muted>
+        <source src="assets/dream_loop.mp3" type="audio/mpeg">
+    </audio>
+    <div class="content-container">
+        <div class="terminal">
+            <div id="typing-text"></div>
+            <span class="cursor"></span>
+        </div>
+        <div class="button-container">
+            <a href="core_memory.html" id="next-page-button">Access Core Memory</a>
+        </div>
+    </div>
+    
+    <footer>
+        Memory Usage: 102.4% | lucid.sys active
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
