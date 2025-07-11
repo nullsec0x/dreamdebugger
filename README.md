@@ -23,7 +23,7 @@ Think of it as a digital journey into the weirdest corners of your mind. We've g
 
 It's super simple, even if your brain feels like a tangled mess right now:
 
-1.  **Clone this repo:** `git clone [repo_link_here]` (You know the drill, right?)
+1.  **Clone this repo:** `git clone [https://github.com/nullsec0x/dreamdebugger]` (You know the drill, right?)
 2.  **Open `index.html`:** Just double-click it in your browser. No fancy servers needed, unless you're into that kind of thing.
 3.  **Follow the prompts:** Click buttons, read the cryptic messages, and try not to get lost in the digital abyss. It's all part of the fun!
 4.  **Pro-tip:** Keep an eye out for hidden secrets. We heard there's a special key combo that unlocks something cool in the console. Just sayin
